@@ -6,21 +6,15 @@
 </head>
 
 <body>
-	<div>
-		<h1> Techies 22 blog <h1>
-	</div>
-
-	<div>
-	<p>published 10/11/17 19:00:00 hs</p>
-	<p><h1>My first entry</h1></p>
-	<p>Lorem ipsum solei</p>
-	</div>
 	
-	<div>
-	<p>published 10/11/17 19:10:00 hs</p>
-	<p><h1>My Second entry</h1></p>
-	<p>Lorem ipsum solei</p>
-	</div>	
+		{% for post in posts %}
+			<div>
+				<p>published {{ post.published_date }}</p>
+				<p><h1>{{ post.title }}</h1></p>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+
 </body>
 
 </html>
